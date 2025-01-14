@@ -8,9 +8,7 @@ export async function GET() {
 
 /* Unfinished and Untested */
 export async function POST(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const term_id = searchParams.get('term_id');
-    const term_name = searchParams.get('term_name');
+    const { term_id, term_name } = await request.json();
  
     // To insert
     try {
